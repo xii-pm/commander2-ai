@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Local virtualenvs
+.venv/
+venv/
+env/
+
+# Runtime artefacts produced by the strategy itself
+bfs-trace.jsonl
+*.log
+*.jsonl
+
+# Training / evaluation output (kept out of the repository)
+results/
+replays/
+*.zip
+
+# Editors and OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local secrets
+.env
+*.pem
+*.key

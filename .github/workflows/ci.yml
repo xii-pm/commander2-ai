@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.10", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Configuration validates
+        run: python tools/validate_config.py
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Generated docs are up to date
+        run: |
+          python tools/gen_docs.py
+          git diff --exit-code -- docs/
+
+  sanity:
+    name: Repository sanity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No secrets, no binaries, no SDK copy
+        run: |
+          test -z "$(git ls-files | grep -Ei '\.(zip|pem|key|p12|pfx)$' || true)"
+          test -z "$(git ls-files | grep -E '__pycache__' || true)"
+          test -z "$(git ls-files | grep -Ei '(^|/)Commander(\.py)?$' || true)"
+          echo "repository layout looks clean"

@@ -1,0 +1,19 @@
+{
+  "reference": "results\\bfs_god12\\reference-probe-three-god-post0800\\agent",
+  "source_sha256": {
+    "strategy.py": "0d928434e10093339f1f5c64d0419947978ca096ad13eecbe57218534c618bd1",
+    "economy.py": "fad533683b52da77481982c91dac9c8661d088a8116c6e5bdc8bc2ff15ae966b",
+    "campaign.py": "2344824bc4c3d3f65131afac054ffba33b2b9f3e64970b7032193797d0d3502b"
+  },
+  "renamed": {
+    "strategy.py": "std_probe_policy.py",
+    "economy.py": "std_probe_economy.py",
+    "campaign.py": "std_probe_campaign.py"
+  },
+  "changes": [
+    "Private local imports; no runtime dependency on opponent folders.",
+    "Separate observation from decision for transactional evaluation.",
+    "Optional every-observation cadence; enabled only by the coordinator."
+  ],
+  "qualification": "Development transfer only. No inherited reference outcomes."
+}
