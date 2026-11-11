@@ -1,4 +1,4 @@
-﻿# 发布到 GitHub：完整操作指南
+# 发布到 GitHub：完整操作指南
 
 本目录已经是一个**可直接推送的 git 仓库内容**：源码、`README.md`、`LICENSE`（MIT）、
 `.gitignore`、CI、测试、文档都齐了，只差最后三步——装 Git、建远程仓库、推送。

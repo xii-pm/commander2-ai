@@ -21,10 +21,10 @@ jobs:
         python-version: ["3.8", "3.10", "3.12"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -43,7 +43,7 @@ jobs:
     name: Repository sanity
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: No secrets, no binaries, no SDK copy
         run: |
           test -z "$(git ls-files | grep -Ei '\.(zip|pem|key|p12|pfx)$' || true)"
