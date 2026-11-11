@@ -19,12 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Third-party notices
-
-This repository does not redistribute the Commander-II platform, its SDK, its
-map files, its replays or any other team's submission. Modules that were ported
-from the team's own training opponents are listed in PROVENANCE.md; those
-files carry their own origin notes in their module docstrings.
