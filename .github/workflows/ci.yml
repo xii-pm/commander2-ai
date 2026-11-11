@@ -12,7 +12,9 @@ permissions:
 jobs:
   test:
     name: Python ${{ matrix.python-version }}
-    runs-on: ubuntu-latest
+    # Pinned to 24.04: ubuntu-latest (26.04) has no prebuilt CPython for 3.8/3.9,
+    # so setup-python cannot install the old end of the matrix there.
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
